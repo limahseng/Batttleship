@@ -75,8 +75,8 @@ for turn in range(100):
     col=get_col()
     while check_input(row,col)!=True:
         print("Try again")
-        row=get_row()
         col=get_col()
+        row=get_row()
     row=int(row)-1
     col=int(col)-1
     check_hit(row,col)
