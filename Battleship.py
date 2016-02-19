@@ -33,7 +33,7 @@ def check_input(row,col):
         if (row < 0 or row > 10) or (col < 0 or col > 10):
             print ("Oops, that's not even in the ocean.")
             return False
-        elif board[row][col] == ("@" or "X" or "-"):
+        elif board[row][col] == "@" or board[row][col]=="X" or board[row][col]=="-":
             print ("You guessed that one already.")
             return False
         return True
@@ -68,7 +68,7 @@ def check_win():
 
 #Main
 print ("Let's play Battleship!")
-print ("You have 30 turns to sink all the ships. \nSelect a row and column between 0 and 10 as a target. \nO denotes an unknown spot. @ denotes an empty spot. \nX denotes a hit. - denotes a sunken ship.")
+print ("You have 30 turns to sink all the ships. \nSelect a row and column between 1 and 10 as a target. \nO denotes an unknown spot. @ denotes an empty spot. \nX denotes a hit. - denotes a sunken ship.")
 print_board()
 for turn in range(100):
     row=get_row()
@@ -83,9 +83,9 @@ for turn in range(100):
     if check_win():
         print("You win!")
         break
-    print ("Turn",turn+1)
-    print (ships)
+    #print (ships)
     print_board()
     if turn==30:
         print("You lose!")
         break
+    print ("Turn",turn+1)
