@@ -80,3 +80,4 @@ for turn in range(100):
     print_board()
     #(If the player has exceeded to maximum amount of turns, exit the loop and print "Game over")#
     #(Tell the player what turn it is)#
+    #You can use a print(ships) statement to debug, don't forget to remove it or comment it out so that the actual players can't cheat! 
