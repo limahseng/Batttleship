@@ -83,9 +83,9 @@ for turn in range(100):
     if check_win():
         print("You win!")
         break
-    #print (ships)
     print_board()
     if turn==30:
         print("You lose!")
         break
     print ("Turn",turn+1)
+    #print (ships)
