@@ -12,7 +12,7 @@ for x in range(10):
 #Place ships
 randomrow = [0,1,2,3,4,5,6,7,8,9]
 shuffle(randomrow)
-ships=[["carrier",randint(0,5),randomrow[0],5,5],#(make four more ships, with the structure of ["NAME",COL,ROW,NUMBER OF PIECES,NUMBER OF PIECES])#]
+ships=[["carrier",randint(0,5),randomrow[0],5,5],["battleship",randint(0,6),randomrow[1],4,4],["cruiser",randint(0,7),randomrow[2],3,3],["submarine",randint(0,8),randomrow[3],2,2],["destroyer",randint(0,8),randomrow[4],2,2]]
 
 #Print board
 def print_board():
@@ -72,12 +72,19 @@ print_board()
 for turn in range(100):
     row=get_row()
     col=get_col()
-    #(While the input is invalid, get the player to try entering coordinates again)#
+    #(While the input is invalid)#
+        #(Tell the player to try again)#
+        #(Get col again)#
+        #(Get row again)#
     row=int(row)-1
     col=int(col)-1
     check_hit(row,col)
-    #(If the user has won, print "You win" and exit loop)#
+    #(If the user has won)#
+        #(print You win)#
+        #(exit loop)#
     print_board()
-    #(If the player has exceeded to maximum amount of turns, exit the loop and print "Game over")#
-    #(Tell the player what turn it is)#
+    #(If the player has exceeded to maximum amount of turns)#
+        #(Print game over)#
+        #(Exit the loop)#
+    print ("Turn",turn+1)
     #You can use a print(ships) statement to debug, don't forget to remove it or comment it out so that the actual players can't cheat! 
