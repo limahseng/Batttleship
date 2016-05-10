@@ -30,14 +30,14 @@ for turn in range(4):
         break
     else:
         if (guess_row < 0 or guess_row > 4) or (guess_col < 0 or guess_col > 4):
-            print ("Oops, that's not even in the ocean.")
+            print("Oops, that's not even in the ocean.")
         elif(board[guess_row][guess_col] == "X"):
-            print ("You guessed that one already.")
+            print("You guessed that one already.")
         else:
-            print ("You missed the battleship!")
+            print("You missed the battleship!")
             board[guess_row][guess_col] = "X"
         if turn==3:
             print("Game Over")
-            print("The Battleship is in" + " " + str(ship_row)+ "," + str(ship_col))
-    print ("Turn",turn+1)
+            print("The Battleship is in row", ship_row, ", col", ship_col)
+    print("Turn", turn+1)
     print_board(board)
