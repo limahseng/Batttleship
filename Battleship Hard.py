@@ -31,7 +31,7 @@ def check_input(row,col):
     try:
         row = int(row)-1
         col = int(col)-1
-        if (row < 0 or row > 10) or (col < 0 or col > 10):
+        if (row < 0 or row > board_size) or (col < 0 or col > board_size):
             print("Oops, that's not even in the ocean.")
             return False
         elif board[row][col] == "@" or board[row][col] == "X" or board[row][col] == "-":
