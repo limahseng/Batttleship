@@ -1,33 +1,36 @@
-#Import from library
+# Import from library
 from random import randint
 from random import shuffle
 
-#Initialize board
+# Initialize board
 board = []
 board_size = 10
 
-#Build board
+# Build board
 for x in range(board_size):
     board.append(["O"] * board_size)
-    
-#Place ships
+
+# Place ships
 randomrow = [0,1,2,3,4,5,6,7,8,9]
 shuffle(randomrow)
-ships=[["carrier",randint(0,5),randomrow[0],5,5],["battleship",randint(0,6),randomrow[1],4,4],["cruiser",randint(0,7),randomrow[2],3,3],["submarine",randint(0,8),randomrow[3],2,2],["destroyer",randint(0,8),randomrow[4],2,2]]
+ships = [["carrier",randint(0,5),randomrow[0],5,5],["battleship",randint(0,6),randomrow[1],4,4],["cruiser",randint(0,7),randomrow[2],3,3],["submarine",randint(0,8),randomrow[3],2,2],["destroyer",randint(0,8),randomrow[4],2,2]]
 
-#Print board
+
+# Print board
 def print_board():
     for row in board:
         print(" ".join(row))
 
-#Get input
+
+# Get input
 def get_row():
     return input("Guess Row:")
 def get_col():
     return input("Guess Col:")
 
-#Check input
-def check_input(row,col):
+
+# Check input
+def check_input(row, col):
     try:
         row = int(row)-1
         col = int(col)-1
@@ -41,16 +44,16 @@ def check_input(row,col):
     except ValueError:
         return False
 
-    
-#Check for hit
-def check_hit(row,col):
+
+# Check for hit
+def check_hit(row, col):
     hit = 0
     for ship in ships:
         if ship[1] <= col <= (ship[1]+ship[4]) and row == ship[2]:
             hit = 1
             ship[3] -= 1
             if ship[3] == 0:
-                print("You sank the",ship[0],"!")
+                print("You sank the", ship[0], "!")
                 for i in range(ship[4]):
                     board[ship[2]][ship[1]+i] = "-"
             else:
@@ -60,27 +63,29 @@ def check_hit(row,col):
         print("You missed.")
         board[row][col] = "@"
 
-#Check for win
+
+# Check for win
 def check_win():
     for ship in ships:
         if ship[3] != 0:
             return False
     return True
 
-#Main
+
+# Main
 print("Let's play Battleship!")
 print("You have 30 turns to sink all the ships. \nSelect a row and column between 1 and 10 as a target. \nO denotes an unknown spot. @ denotes an empty spot. \nX denotes a hit. - denotes a sunken ship.")
 print_board()
 for turn in range(100):
     row = get_row()
     col = get_col()
-    while check_input(row,col) is False:
+    while check_input(row, col) is False:
         print("Try again")
         col = get_col()
         row = get_row()
     row = int(row)-1
     col = int(col)-1
-    check_hit(row,col)
+    check_hit(row, col)
     if check_win():
         print("You win!")
         break
@@ -88,5 +93,5 @@ for turn in range(100):
     if turn == 30:
         print("You lose!")
         break
-    print("Turn",turn+1)
-    #print(ships)
+    print("Turn", turn+1)
+#   print(ships)
