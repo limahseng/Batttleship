@@ -89,4 +89,4 @@ for turn in range(100):
         #(tell the player game over)
         #(exit the loop)
     print("Turn",turn+1)
-    #print(ships)
+    #(you can use print(ships) here to cheat!)
