@@ -2,7 +2,7 @@
 
 # initialize an empty board so that spaces can be appended to it later
 
-# insert five rows of ["O","O","O","O","O"] into the board 
+# insert three rows of ["O","O","O"] into the board 
 
 # create a function print_board to print the board
 
