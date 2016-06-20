@@ -19,7 +19,8 @@ def random_col(board):
 print("Let's play Battleship!")
 print_board(board) 
 
-for turn in range(4):
+turn = 1
+while turn<5:
     ship_row = random_row(board) # places the ship
     ship_col = random_col(board) # places the ship
     guess_row = int(input("Guess Row:"))-1 # gets row from user and converts to index. input must be a number
@@ -29,16 +30,17 @@ for turn in range(4):
         print ("Congratulations! You sunk the battleship!")
         break
     else:
-        if (guess_row < 0 or guess_row > 3) or (guess_col < 0 or guess_col > 3): # out of range
+        if (guess_row < 0 or guess_row > 2) or (guess_col < 0 or guess_col > 2): # out of range
             print("Oops, that's not even in the ocean.")
         elif(board[guess_row][guess_col] == "X"): # the spot has already been hit
             print("You guessed that one already.")
         else: # the player hits an empty spot
             print("You missed the battleship!")
             board[guess_row][guess_col] = "X" 
-        if turn==3: # after four turns
+            turn = turn + 1
+        if turn==4: # after four turns
             print("Game Over")
             print("The Battleship is in row", ship_row, ", col", ship_col)
             
-    print("Turn", turn+1)
+    print("Turn", turn)
     print_board(board)
