@@ -2,8 +2,8 @@ from random import randint  #randint generates a random interger in the range pr
 
 board = [] #initializes an empty board so that spaces can be appended to it later
 
-for x in range(5):
-    board.append(["O"] * 5) #inserts five rows of ["O","O","O","O","O"] into the board 
+for x in range(4):
+    board.append(["O"] * 4) #inserts five rows of ["O","O","O","O","O"] into the board 
 
 def print_board(board): 
     for row in board:
@@ -29,7 +29,7 @@ for turn in range(4):
         print ("Congratulations! You sunk the battleship!")
         break
     else:
-        if (guess_row < 0 or guess_row > 4) or (guess_col < 0 or guess_col > 4): #out of range
+        if (guess_row < 0 or guess_row > 3) or (guess_col < 0 or guess_col > 3): #out of range
             print("Oops, that's not even in the ocean.")
         elif(board[guess_row][guess_col] == "X"): #the spot has already been hit
             print("You guessed that one already.")
