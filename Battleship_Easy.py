@@ -2,8 +2,8 @@ from random import randint  # randint generates a random interger in the range p
 
 board = [] # initializes an empty board so that spaces can be appended to it later
 
-for x in range(4):
-    board.append(["O"] * 4) # inserts five rows of ["O","O","O","O","O"] into the board 
+for x in range(3):
+    board.append(["O"] * 3) # inserts three rows of ["O","O","O"] into the board 
 
 def print_board(board): 
     for row in board:
