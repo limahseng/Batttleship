@@ -1,0 +1,29 @@
+# import randint
+
+# initialize an empty board so that spaces can be appended to it later
+
+# insert five rows of ["O","O","O","O","O"] into the board 
+
+# create a function print_board to print the board
+
+# create a function random_row to generate a random number that corresponds to the index of a row on the board
+
+# create a function random_col to generate a random number that corresponds to the index of a column on the board
+
+# print an intro message
+
+# call print_board()
+
+# loop four times
+    
+    # create a variable called ship_row and assign it result of random_row()
+    # create a variable called ship_col and assign it result of random_col()
+    # get the row from the user and convert to index form
+    # get the col from the user and convert to index form
+    # check for the hit
+        # if the player has hit the ship, congratulate them
+        # if the input is invalid (out of range or has already been guessed), ask them to try again
+        # after four turns, print game over and reveal the location of the battleship
+    
+    # at the end of each turn, print the turn number
+    # print the board again
