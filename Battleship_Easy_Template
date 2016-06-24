@@ -1,14 +1,16 @@
 # import randint
 
-# initialize an empty board so that spaces can be appended to it later
-
-# insert three rows of ["O","O","O"] into the board 
-
 # create a function print_board to print the board
 
 # create a function random_row to generate a random number that corresponds to the index of a row on the board
 
 # create a function random_col to generate a random number that corresponds to the index of a column on the board
+
+
+# main
+# initialize an empty board so that spaces can be appended to it later
+
+# insert three rows of ["O","O","O"] into the board 
 
 # print an intro message
 
@@ -18,13 +20,13 @@
 # create a variable called ship_col and assign it result of random_col()
 # create an integer called turn and set it to 1
 
-# while turn is less then 5
+# while turn is less than 4
     # print the turn number
-    # get the row from the user and convert to index form
-    # get the col from the user and convert to index form
+    # get the row from the user and convert to integer
+    # get the col from the user and convert to integer
     # check for the hit
-        # if the player has hit the ship, congratulate them
-        # if the input is invalid (out of range or has already been guessed), ask them to try again
-        # if the player has missed, increment the turn and reflect the hit on the board (board[row][col] = "X") and print the board again
-        # after four turns, print game over and reveal the location of the battleship
+        # if the player has hit the ship, congratulate him/her
+        # if the input is invalid (out of range or has already been guessed), prompt to try again
+        # if the player has missed, increment turn and reflect the hit on the board (board[row][col] = "X") and print the board
+        # after 3 turns, print game over and reveal the location of the battleship
     
